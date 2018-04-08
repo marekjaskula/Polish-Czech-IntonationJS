@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="description" content="">
+    <meta name="author" content="Marek Jaskuła, Marzena Żygis">
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+	<!-- <script src="vendor/vad.js"></script> -->
+    <script src="vendor/tock.min.js"></script>
+    <!-- <script src="js/volume-meter.js"></script> -->
+    <script type="text/javascript" src="js/myScriptClean.js"></script>
+	
+
+	<link rel="stylesheet" href="css/progressbar.css" />
+	<script type="text/javascript" src="js/progressbar.min.js"></script>
+
+
+    		<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+
+    <title>2018. Pol-Czech Intonation Experiment</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/font-awesome/font-awesome.min.css" rel="stylesheet">
+	
+	
+
+</head>
+
+<style>
+.bg-dark {
+    background-color: #18436d!important;
+}
+
+</style>
+
+
+<body>
+
+<script>
+
+    serwerStart();
+    initAudio();
+
+</script>
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+
+        <!-- ************************************************* -->
+        <a class="navbar-brand etap" href="#1">DATA</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- ************************************************* -->
+
+        <a class="navbar-brand etap" href="#2">RECORDS</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <a id="1">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+          
+                <h3>Podaj dane:</h3>
+                 <input type="text" id="myId" value="Id"><br>
+				<input type="text" id="myFirstName" value="Imie"><br>
+                <input type="text" id="myFamilyName" value="Nazwisko"><br>
+                <input type="text" id="myDate" value="1920"><br>
+               
+
+                <form action="#" method="post" class="demoForm" id="demoForm">
+                    <p>
+                        <label><input type="radio" name="ship" id="female" value="K" checked/> Kobieta</label>
+                        <label><input type="radio" name="ship" id="male" value="M"/> Mężczyzna</label>
+                    </p>
+                </form>
+
+                <button id="submit" onclick="myFunction()">Zatwierdź</button>
+
+                <p id="demo"></p>  <!--Tu pojawi się nazwa bazowa  ze zmiennej FileName -->
+
+            </div>
+
+            <script>
+
+
+                // Funkcja dodana z internetu https://stackoverflow.com/questions/2536379/difference-in-months-between-two-dates-in-javascript
+                //Wyliczająca liczbę miesięcy w stosunku do bieżacej daty
+                //Potrzebna do identyfikatora bazowego
+                function getAge(dateString) {
+                    var birthdate = new Date(dateString).getTime();
+                    var now = new Date().getTime();
+                    // now find the difference between now and the birthdate
+                    var n = (now - birthdate) / 1000;
+                    var month_n = Math.floor(n / 2629743)
+                    return month_n;
+                }
+				
+				   // Funkcja dodana z internetu https://stackoverflow.com/questions/2536379/difference-in-months-between-two-dates-in-javascript
+                //Wyliczająca liczbę LAT w stosunku do bieżacej daty
+                //Potrzebna do identyfikatora bazowego
+                function getAgeYear(dateString) {
+                    var birthdate = new Date(dateString).getTime();
+                    var now = new Date().getTime();
+                    // now find the difference between now and the birthdate
+                    var n = (now - birthdate) / 1000;
+                    var year_n = Math.floor(n / 2629743/12)
+                    return year_n;
+                }
+				
+
+                var FileName;
+
+                function myFunction() {
+                    //var fs = require('fs');
+
+                    var Imie = document.getElementById("myFirstName").value;
+                    var Nazwisko = document.getElementById("myFamilyName").value;
+                    var Year = document.getElementById("myDate").value;
+                    var Id = document.getElementById("myId").value;
+                    // dodana zmienna
+					<!-- var age = getAge(Year);  //zwraca wiek w miesiącach -->
+                    var age = getAgeYear(Year);  //zwraca wiek w latach
+                    //
+                    if(document.getElementById('female').checked) {
+                        var sex = "K";
+                    }
+                    else if(document.getElementById('male').checked) {
+                        var sex = "M";
+                    }
+
+                 
+                    FileName = Id + Imie + Nazwisko + sex + '_' + age;
+
+                    var newNameFolder = FileName;
+        
+
+                    if(ws) {
+                        ws.send(JSON.stringify({
+                            command: 'csv',
+                            payload: {
+                                filename: encodeURIComponent(FileName),
+                                nameFolder: encodeURIComponent(newNameFolder),
+                                data: {
+                                    id: encodeURIComponent(Id),
+                                    FileName: encodeURIComponent(FileName),
+                                    Imie: encodeURIComponent(Imie),
+                                    Nazwisko: encodeURIComponent(Nazwisko),
+                                    Year: encodeURIComponent(Year),
+                                    age: encodeURIComponent(age),
+                                    sex: encodeURIComponent(sex),
+                                    <!-- Klasa: encodeURIComponent(Klasa), -->
+                                    <!-- Szkola: encodeURIComponent(Szkola) -->
+                                }
+                            }
+                        }));
+
+                        window.userData = {
+                            id: (Id),
+                            filename: (FileName),
+                            nameFolder: (newNameFolder),
+                            Imie: (Imie),
+                            Nazwisko: (Nazwisko),
+                            Year: (Year),
+                            age: (age),
+                            sex: (sex),
+                            <!-- Klasa: (Klasa), -->
+                            <!-- Szkola: (Szkola) -->
+                        }
+
+                    }
+
+                    document.getElementById("demo").innerHTML = FileName;   //wyswietla nazwe Id bazowego
+
+                    <!-- document.getElementById('myDiv').innerHTML = FileName; -->
+                    return FileName;
+                }
+
+
+            </script>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+
+        <a id="2">
+            <div class="row">
+               
+
+					 <div id="my-progressbar"><br></div>    	
+		
+						
+					<div id="myDiv">
+					<br>
+						<div id="divLOG"><p id="log"></p></div>	
+						<button id="NEXT_button" onclick="displayZestaw(NrZestawu++);" enabled> NEXT </button>
+						<button id="StartRecord" onclick="startRecording(this);" disabled>RECORD</button>
+						<button id="StopRecord" onclick="stopRecording(this);" disabled> STOP </button>
+						<div id="recordingslist"><br></div>
+					</div>
+				
+					<div class="col-lg-12 text-center">
+					<div style="background-color:lightblue">
+						<h3><div id="Pytanie" >Żeby zacząć NACIŚNIJ przycisk NEXT! </div>
+						 <audio id="audio"></audio>
+						</h3>
+					</div>	 
+					<br><br><br><br>
+					<div style="color:red; font-family:verdana; font-size:160%; font-weight:bold">
+						<h1><div id="Nagranie" ></div></h1>
+					</div>	
+										 
+				
+                    <script src="dist/recorder.js"></script>
+                </div> 
+ 		
+			    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+            </div>
+  
+
+
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/popper/popper.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

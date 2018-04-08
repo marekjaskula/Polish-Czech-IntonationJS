@@ -1,0 +1,570 @@
+<
+style media
+
+=
+"screen"
+>
+
+body {
+	background-color: #2c2c2c;
+	/* padding-top: 4px; */
+} 
+
+/* #przyciski { */
+/* position: absolute; */
+/* top: 70%; */
+/* left: 10%; */
+/* } */
+
+/* #niebieski { */
+/* top: 85%; */
+/* left: 5%; */
+/* width: 5%; */
+/* position: absolute; */
+/* -webkit-filter: hue-rotate(180deg); */
+/* filter: hue-rotate(180deg); */
+/* }		 */
+
+/* #czerwony { */
+/* top: 85%; */
+/* left: 10%; */
+/* width: 5%; */
+/* position: absolute; */
+/* } */
+
+/* #zielony { */
+/* top: 85%; */
+/* left: 15%; */
+/* width: 5%; */
+/* position: absolute; */
+/* -webkit-filter: hue-rotate(90deg); */
+/* filter: hue-rotate(90deg); */
+/* } */
+
+#przyciski {
+    /* margin-top: 5px; */
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    width: 100%;
+}
+
+#czerwony {
+
+    width: 6%;
+    position: relative;
+}
+
+#zielony {
+
+    width: 6%;
+    position: relative;
+    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg);
+}
+
+#niebieski {
+
+    width: 6%;
+    position: relative;
+    -webkit-filter: hue-rotate(180deg);
+    filter: hue-rotate(180deg);
+}
+
+#przyciski4 {
+    /* margin-top: 5px; */
+    top: 45%;
+    left: 10%;
+    width: 100%;
+}
+
+#czerwony4 {
+
+    width: 6%;
+    position: relative;
+}
+
+#zielony4 {
+
+    width: 6%;
+    position: relative;
+    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg);
+}
+
+#niebieski4 {
+
+    width: 6%;
+    position: relative;
+    -webkit-filter: hue-rotate(180deg);
+    filter: hue-rotate(180deg);
+}
+
+/* @media (min-width: 992px) { */
+/* body { */
+/* padding-top: 56px; */
+/* } */
+/* } */
+
+.leftImage {
+    top: 22%;
+    left: 1%;
+    border-style: solid;
+    border-color: #0066cc;
+
+    border-width: 5px;
+    margin: 0px 0 0 0px;
+    border-radius: 25px;
+<!-- border: 12 px solid #73AD21;
+--> padding: 10px;
+    width: 32%;
+    height: auto;
+}
+
+.centerImage {
+    top: 22%;
+    left: 34%;
+    border-style: solid;
+    border-color: #ff3333;
+    border-width: 5px;
+    margin: 0px 0 0 0px;
+    border-radius: 25px;
+<!-- border: 12 px solid #73AD21;
+--> padding: 20px;
+    width: 32%;
+    height: auto;
+
+}
+
+.rightImage {
+    top: 22%;
+    left: 67%;
+    border-style: solid;
+    border-color: #4d9900;
+    border-width: 5px;
+    margin: 0px 0 0 0px;
+    border-radius: 25px;
+<!-- border: 12 px solid #73AD21;
+--> padding: 20px;
+    width: 32%;
+    height: auto;
+
+}
+
+.leftImage4 {
+    top: 22%;
+    left: 1%;
+    border-style: solid;
+    border-color: #0066cc;
+
+    border-width: 5px;
+    margin: 0px 0 0 0px;
+    border-radius: 25px;
+<!-- border: 12 px solid #73AD21;
+--> padding: 10px;
+    width: 32%;
+    height: auto;
+}
+
+.centerImage4 {
+    top: 22%;
+    left: 34%;
+    border-style: solid;
+    border-color: #ff3333;
+    border-width: 5px;
+    margin: 0px 0 0 0px;
+    border-radius: 25px;
+<!-- border: 12 px solid #73AD21;
+--> padding: 20px;
+    width: 32%;
+    height: auto;
+
+}
+
+.rightImage4 {
+    top: 22%;
+    left: 67%;
+    border-style: solid;
+    border-color: #4d9900;
+    border-width: 5px;
+    margin: 0px 0 0 0px;
+    border-radius: 25px;
+<!-- border: 12 px solid #73AD21;
+--> padding: 20px;
+    width: 32%;
+    height: auto;
+
+}
+
+#imageButton {
+    position: absolute;
+    top: 92%;
+    left: 80%;
+    width: 10%;
+}
+
+#imageButton4 {
+    position: absolute;
+    top: 92%;
+    left: 80%;
+    width: 10%;
+}
+
+#message {
+    position: absolute;
+    top: 90%;
+    left: 10%;
+    width: 10%;
+}
+
+
+
+
+
+
+#btnsend {
+    position: absolute;
+    top: 90%;
+    left: 3%;
+    width: 5%;
+}
+
+#dvMessage3 {
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    color: red;
+    background-color: white;
+}
+
+#dvMessage4 {
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    color: red;
+    background-color: white;
+}
+
+
+
+#meter {
+    position: absolute;
+    top: 95%;
+    left: 25%;
+}
+
+/* EKRAN RECORD	 */
+
+
+table, th, td {
+    border: 1px solid blue;
+}
+
+.Licz1 {
+    color: #ff1313;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+/* </style> */
+
+/* <style media="screen"> */
+
+.centeredRecordedImage {
+    position: absolute;
+    width: 40%;
+    height: auto;
+    top: 10%;
+    left: 38%;
+    border-style: solid;
+    border-color: darkgrey;
+    border-width: 5px;
+    margin: 0px 0 0 0px;
+    */
+}
+
+#col-lg-12 {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 90%;
+}
+
+
+#NEXT_button {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    background-color: #9c1a18;
+    border: 2px solid #a94f1b;
+    color: #FFF;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#NEXT_button[disabled] {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    background-color: #6b2625;
+    border: 2px solid #66361b;
+    color: #727171;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+
+
+
+#StopRecord {
+    position: relative;
+    top: 0%;
+    left: 10%;
+    background-color: #9c1a18;
+    border: 2px solid #a94f1b;
+    color: #FFF;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#StopRecord[disabled] {
+    position: relative;
+    top: 0%;
+    left: 10%;
+    background-color: #6b2625;
+    border: 2px solid #66361b;
+    color: #727171;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+
+
+#StartRecord {
+    position: relative;
+    top: 0%;
+    left: 10%;
+    background-color: #9c1a18;
+    border: 2px solid #a94f1b;
+    color: #FFF;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#StartRecord[disabled] {
+    position: relative;
+    top: 0%;
+    left: 10%;
+    background-color: #6b2625;
+    border: 2px solid #66361b;
+    color: #727171;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#divLOG {
+    /* position: absolute; */
+    /* top: 300%; */
+    /* left: 60%; */
+    /* width: 90%;    */
+position: relative;
+    top: 30%;
+    left: 50%;
+    width: 90%;
+	/* background-color:lightblue; */
+	background-color:white;
+}
+
+
+#myDiv {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 800px
+}
+
+table, th, td {
+    border: 1px dashed lightblue;
+}
+
+.Licz1 {
+    color: #ff1313;
+}
+
+#Tablica {
+    position: absolute;
+    top: 10%;
+    left: 92%;
+    color: lightgray;
+
+}
+
+.removeBtn {
+    /* background-color: #4CAF50; Green */
+    background-color: lightgray;
+    border: none;
+    color: red;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    border-radius: 2px;
+    margin-left: 15px;
+}
+
+/*audio {
+position: absolute;
+left: 0%;
+ vertical-align: middle;
+opacity: .8;
+!* width: 100%; *!
+border: 1px solid lightgray;
+ }*/
+
+#recordingslist {
+	display: flex;
+    width: 550px;
+    flex-direction: column;
+}
+
+#recordingslist > div {
+    width: 100%;
+    display: flex;
+    color: #5a5a5a;
+}
+
+#recordingslist > audio, #recordingslist > button {
+    display: block;
+}
+
+.btn-wrapper {
+    display: flex;
+    align-items: center;
+    background: #FAFAFA;
+    z-index: 999;
+    height: 32px;
+    padding: 10px;
+}
+
+.btn-wrapper-upload {
+    display: flex;
+    align-items: center;
+    background: #FAFAFA;
+    z-index: 999;
+    height: 32px;
+    padding: 10px;
+	color: red;
+}
+
+
+.myButton {
+    -moz-box-shadow: inset 0px 1px 0px 0px #54a3f7;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #54a3f7;
+    box-shadow: inset 0px 1px 0px 0px #54a3f7;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #007dc1), color-stop(1, #0061a7));
+    background: -moz-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background: -webkit-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background: -o-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background: -ms-linear-gradient(top, #007dc1 5%, #0061a7 100%);
+    background: linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dc1', endColorstr='#0061a7', GradientType=0);
+    background-color: #007dc1;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #124d77;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 13px;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #154682;
+}
+
+.myButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0061a7), color-stop(1, #007dc1));
+    background: -moz-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: -webkit-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: -o-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: -ms-linear-gradient(top, #0061a7 5%, #007dc1 100%);
+    background: linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0061a7', endColorstr='#007dc1', GradientType=0);
+    background-color: #0061a7;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.myButton:disabled,
+.myButton[disabled] {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+.row {
+    padding-top: 80px;
+}
+
+.navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .05rem .1rem;
+}
+
+
+
+<!--
+lista nagrań bez bullets
+
+-->
+li {
+    list-style-type: none;
+}
+
+/* EKRAN RECORD	 */
+
+
+
+
+<
+/
+style >
+	
