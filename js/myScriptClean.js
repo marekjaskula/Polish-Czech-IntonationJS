@@ -696,8 +696,7 @@ function displayZestaw(NrZestawu) {
 	// logDisplay('IdZestawu = ' + IdZestawu);
 	logDisplay("Zestaw " + NrZestawu + ':  SŁUCHAJ UWAŻNIE!');
 
-
-
+	 	
 
 
 }
@@ -875,25 +874,11 @@ function createDownloadLink() {
                 }));
             });
 		
+			
+         
+        
 
-
-			blobToBase64(blob, function(result) {
-                ws.send(JSON.stringify({
-                    command: 'text',
-                    payload: {
-                        // filename: window.userData.filename + '_nagranie' + date.getMilliseconds(),
-                        filename: window.userData.filename,
-                        // wavName: AudioSource,
-                        wavName: Zestaw[NrZestawu-1][3],
-                        // tempLicz: tempLicz,
-                        tempLicz: tempLicz,
-                        // imgs: imgs[counter];
-                        imgs: soundSource,
-                        nameFolder: window.userData.nameFolder,
-                        src: Zestaw[NrZestawu][2]
-                    }
-                }));
-            });
+		
 
 
 
@@ -953,6 +938,24 @@ function createDownloadLink() {
         /* to dodalem */
 
         recordingslist.appendChild(li);
+		
+		
+		
+		       ws.send(JSON.stringify({
+                    command: 'txt',
+                    payload: {
+                        // filename: window.userData.filename + '_nagranie' + date.getMilliseconds(),
+                        filename: window.userData.filename,
+                        // wavName: AudioSource,
+						wavName: Zestaw[NrZestawu-1][3],
+                        text: Zestaw[NrZestawu-1][2],
+                        // tempLicz: tempLicz,
+                        tempLicz: tempLicz,
+                        // imgs: imgs[counter];
+                        imgs: soundSource,
+                        nameFolder: window.userData.nameFolder
+                    }
+                }));
 
         //ws.send(JSON.stringify({command:'start'}));
 		
