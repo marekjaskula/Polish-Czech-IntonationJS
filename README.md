@@ -17,6 +17,10 @@ run client:   index.html  (tested for Chrome, Windows)
        
 confirm:  init Audio
 
+
+9.04.2018:   v 0.2a
+  - Added Run.bat for easier running node.js server :)
+
 9.04.2018:   v 0.2 
   - generate MONO wav files
   - generate text files with text that the Lektor is recording (for WebMAUS)
