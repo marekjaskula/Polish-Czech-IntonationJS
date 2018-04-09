@@ -70,6 +70,11 @@ socketObject.on('message', function(message) {
             if(parsedMessage.command === 'csv') {
                 handleCSV(parsedMessage.payload);
             }
+			
+			 if(parsedMessage.command === 'txt') {
+                handleTXT(parsedMessage.payload);
+            }
+			
 
 		    if(parsedMessage.command === 'upload_audio') {
                 // uploadAudio(parsedMessage.payload.src, parsedMessage.payload.filename,  parsedMessage.payload.wavName, parsedMessage.payload.nameFolder);
@@ -123,6 +128,50 @@ socketObject.on('message', function(message) {
         writer.end();
     }
 //z app generowanie csv
+
+
+  function handleTXT(payload) {
+        //var baseFolder = appDir + '\\DATA\\';
+		var baseFolder = appDir + '//DATA//';
+
+        var folder = baseFolder + decodeURIComponent(payload.nameFolder);
+        //var fileName = folder + '\\' + decodeURIComponent(payload.filename) + '.csv';
+		var fileName = folder + '//' + decodeURIComponent(payload.filename) + '_' + decodeURIComponent(payload.wavName) + '.txt';
+
+        if(!fs.existsSync(baseFolder)) {
+            fs.mkdirSync(baseFolder);
+            console.log('mkDirsync');
+        }
+
+        if(!fs.existsSync(folder)) {
+            fs.mkdirSync(folder);
+        }
+
+		
+		 fs.writeFile(fileName, payload.text, function(err){ //
+			if (err) throw err;
+			console.log("success");
+		});
+		
+		
+        // var headers = [];
+        // Object.keys(payload.data).forEach(function(header) {
+            // headers.push(decodeURIComponent(header));
+        // });
+
+        // var data = [];
+        // headers.forEach(function(header) {
+            // data.push(decodeURIComponent(payload.data[header]));
+        // });
+
+        // var writer = csvWriter({headers: headers, separator: ';'})
+        // writer.pipe(fs.createWriteStream(fileName));
+        // writer.write(data);
+        // writer.end();
+    }
+
+
+
 
 		
 //z app upload audio	
